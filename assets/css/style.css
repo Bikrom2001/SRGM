@@ -476,7 +476,7 @@ section {
 #SR-service .icon-box {
   padding: 30px 20px;
   transition: ease-in-out 0.3s;
-  border: 1px solid #e6636a;
+  /* border: 1px solid #e6636a; */
   height: 100%;
   text-align: center;
 }
@@ -508,8 +508,30 @@ section {
 #SR-service .icon-box:hover {
   border-color: #ffc451;
 }
+
 /*--------------------------------------------------------------
-# Services
+### Stats Counter Section
+--------------------------------------------------------------*/
+.stats-counter .stats-item {
+  padding: 30px;
+  width: 100%;
+}
+.stats-counter .stats-item span {
+  font-size: 58px;
+  display: block;
+  color: black;
+  font-weight: 700;
+}
+.stats-counter .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+/*--------------------------------------------------------------
+### exclusive
 --------------------------------------------------------------*/
 .services .icon-box {
   margin-bottom: 20px;
