@@ -92,24 +92,6 @@
   );
 
   /**
-   * Hero carousel indicators
-   */
-  let heroCarouselIndicators = select("#hero-carousel-indicators");
-  let heroCarouselItems = select("#heroCarousel .carousel-item", true);
-
-  heroCarouselItems.forEach((item, index) => {
-    index === 0
-      ? (heroCarouselIndicators.innerHTML +=
-          "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-          index +
-          "' class='active'></li>")
-      : (heroCarouselIndicators.innerHTML +=
-          "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-          index +
-          "'></li>");
-  });
-
-  /**
    * Porfolio isotope and filter
    */
   window.addEventListener("load", () => {
@@ -138,6 +120,60 @@
         true
       );
     }
+  });
+
+  /**
+   * Init swiper slider with 1 slide at once in desktop view
+   */
+  new Swiper(".slides-1", {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  /**
+   * Init swiper slider with 3 slides at once in desktop view
+   */
+  new Swiper(".slides-3", {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+
+      1200: {
+        slidesPerView: 2,
+      },
+    },
   });
 
   /**
